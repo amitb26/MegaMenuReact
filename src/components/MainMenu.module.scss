@@ -61,14 +61,14 @@
     &.active::after {
       content: '';
       position: absolute;
-      bottom: -12px; // Position it below the navigation bar
+      bottom: -10px; // Position it below the navigation bar
       left: 50%;
       transform: translateX(-50%);
       width: 0;
       height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid #900028;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #900028;
       z-index: 1002;
       display: block;
     }
