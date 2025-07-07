@@ -56,19 +56,22 @@
 .navItem {
   position: relative;
   
-  // Bottom chevron indicator for active menu items
-  &.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #900028;
-    z-index: 50;
+  // Bottom chevron indicator for active menu items (desktop only)
+  @media (min-width: 768px) {
+    &.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #900028;
+      z-index: 1001;
+      display: block;
+    }
   }
 }
 
