@@ -1,0 +1,467 @@
+.megaMenu {
+  position: relative;
+  background-color: #900028;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 16px;
+
+  @media (min-width: 640px) {
+    padding: 0 24px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 32px;
+  }
+}
+
+// Remove brand section since title is not needed
+.brand {
+  display: none;
+}
+
+.brandText {
+  display: none;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  margin-left:-55px;
+  justify-content: flex-start; // Align items to the left
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 16px;
+  }
+}
+
+.navItem {
+  position: relative;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  border-radius: 6px;
+
+  &:hover {
+    color: #fecaca;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fca5a5;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 8px 12px;
+  }
+}
+
+.chevron {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.mobileMenuButton {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.hamburger {
+  padding: 8px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.2s ease;
+  border-radius: 6px;
+
+  &:hover {
+    color: #fecaca;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fca5a5;
+  }
+}
+
+.megaMenuDropdown {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #e5e7eb;
+  z-index: 40;
+  max-height: 75vh;
+  overflow-y: auto;
+  border-bottom: 3px solid #900028;
+  
+  // Prevent horizontal overflow on all screen sizes
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 100vw;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  // Specific constraints for iPad and tablet sizes
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+  }
+}
+
+.dropdownContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  
+  // Ensure content doesn't overflow container
+  box-sizing: border-box;
+  width: 100%;
+
+  @media (min-width: 640px) {
+    padding: 24px 24px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 32px 32px;
+  }
+
+  // Specific padding adjustments for iPad
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    padding: 24px 20px;
+    max-width: calc(100vw - 40px);
+  }
+}
+
+.columnsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  
+  // Ensure grid doesn't overflow
+  box-sizing: border-box;
+  min-width: 0;
+
+  @media (min-width: 640px) {
+    gap: 18px;
+  }
+
+  @media (min-width: 768px) {
+    gap: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 24px;
+  }
+
+  // Specific adjustments for iPad landscape and portrait
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1200px) {
+    gap: 28px;
+  }
+
+  @media (min-width: 1400px) {
+    gap: 32px;
+  }
+
+  // For mobile, stack columns vertically
+  @media (max-width: 639px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0; // Prevent overflow
+  width: 100%;
+  
+  // Ensure column content doesn't overflow
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    gap: 10px;
+  }
+
+  // Specific constraints for iPad
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    gap: 8px;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+.columnTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #900028;
+  border-bottom: 2px solid #fecaca;
+  padding-bottom: 6px;
+  margin: 0 0 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (min-width: 1024px) {
+    font-size: 16px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+
+  // iPad specific adjustments
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 14px;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+  }
+
+  // Hide empty column titles
+  &:empty {
+    display: none;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.columnList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 1024px) {
+    gap: 4px;
+  }
+
+  // iPad specific adjustments
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    gap: 2px;
+  }
+}
+
+.columnLink {
+  display: block;
+  color: #900028;
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: all 0.2s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  
+  // Ensure text doesn't overflow
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+
+  @media (min-width: 1024px) {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
+
+  // iPad specific adjustments
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    padding: 3px 6px;
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  &:hover {
+    color: #900028;
+    background-color: #fef2f2;
+    transform: translateX(2px);
+  }
+}
+
+.mobileMenu {
+  display: block;
+  background-color: white; // Changed from #900028 to white
+  border-top: 1px solid #e5e7eb; // Changed border color to light gray
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileMenuContent {
+  padding: 8px 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 384px;
+  overflow-y: auto;
+}
+
+.mobileNavButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937; // Changed from white to dark gray
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+
+  &:hover {
+    color: #900028; // Changed hover color to brand red
+    background-color: #f9fafb; // Light gray background on hover
+  }
+}
+
+.mobileChevron {
+  font-size: 12px;
+  transition: transform 0.2s ease;
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+.mobileSubmenu {
+  margin-top: 8px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobileColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobileColumnTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #900028; // Changed from #fecaca to brand red
+  padding: 4px 12px;
+  margin: 0;
+
+  // Hide empty mobile column titles
+  &:empty {
+    display: none;
+  }
+}
+
+.mobileColumnLink {
+  display: block;
+  padding: 8px 24px;
+  font-size: 14px;
+  color: #374151; // Changed from white to dark gray
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+
+  &:hover {
+    color: #900028; // Changed hover color to brand red
+    background-color: #f9fafb; // Light gray background on hover
+  }
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1f2937; // Changed from white to dark gray
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+
+  &:hover {
+    color: #900028; // Changed hover color to brand red
+    background-color: #f9fafb; // Light gray background on hover
+  }
+}
+
+// Style for simple links (no dropdown)
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: #991b1b;
+    color: #fecaca;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fca5a5;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 8px 12px;
+  }
+}
