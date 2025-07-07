@@ -55,6 +55,21 @@
 
 .navItem {
   position: relative;
+  
+  // Bottom chevron indicator for active menu items
+  &.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #900028;
+    z-index: 50;
+  }
 }
 
 .navButton {
@@ -87,8 +102,16 @@
 }
 
 .chevron {
-  font-size: 12px;
-  transition: transform 0.2s ease;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid white;
+  transition: border-top-color 0.2s ease;
+  
+  .navButton:hover & {
+    border-top-color: #fecaca;
+  }
 }
 
 .mobileMenuButton {
@@ -371,11 +394,19 @@
 }
 
 .mobileChevron {
-  font-size: 12px;
-  transition: transform 0.2s ease;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #1f2937;
+  transition: all 0.2s ease;
 
   &.rotated {
     transform: rotate(180deg);
+  }
+  
+  .mobileNavButton:hover & {
+    border-top-color: #900028;
   }
 }
 
