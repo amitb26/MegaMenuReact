@@ -253,7 +253,7 @@ export default class MegaMenuComponent extends React.Component<IMegaMenuComponen
                   {item.megaMenu ? (
                     <button className={styles.navButton}>
                       <span>{item.title}</span>
-                      <span className={styles.chevron}>▼</span>
+                      <span className={styles.chevron}></span>
                     </button>
                   ) : (
                     <a
@@ -338,7 +338,6 @@ export default class MegaMenuComponent extends React.Component<IMegaMenuComponen
                       >
                         <span>{item.title}</span>
                         <span className={`${styles.mobileChevron} ${activeMobileSubmenu === item.title ? styles.rotated : ''}`}>
-                          ▼
                         </span>
                       </button>
                       {activeMobileSubmenu === item.title && (
