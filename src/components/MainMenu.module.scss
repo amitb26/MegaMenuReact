@@ -87,17 +87,8 @@
 }
 
 .chevron {
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid white;
-  transition: border-top-color 0.2s ease;
-  margin-left: 2px;
-
-  .navButton:hover & {
-    border-top-color: #fecaca;
-  }
+  font-size: 12px;
+  transition: transform 0.2s ease;
 }
 
 .mobileMenuButton {
@@ -380,17 +371,8 @@
 }
 
 .mobileChevron {
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid #1f2937;
-  transition: all 0.2s ease;
-  margin-left: 2px;
-
-  .mobileNavButton:hover & {
-    border-top-color: #900028;
-  }
+  font-size: 12px;
+  transition: transform 0.2s ease;
 
   &.rotated {
     transform: rotate(180deg);
